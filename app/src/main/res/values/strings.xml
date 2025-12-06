@@ -8,4 +8,6 @@
     <string name="enter_plot_name">Enter plot name</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
+    <string name="toggle_drawing">drawing</string>
+    <string name="open_saved_plots">details</string>
 </resources>

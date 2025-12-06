@@ -4,62 +4,58 @@ package com.example.sowitplot.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.sowitplot.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final LinearLayout bottomPanel;
+  public final LinearLayout actionsColumn;
 
   @NonNull
-  public final Button btnClear;
+  public final FloatingActionButton btnClear;
 
   @NonNull
-  public final Button btnSavePlot;
+  public final FloatingActionButton btnOpenPlotsBottomSheet;
 
   @NonNull
-  public final Button btnToggleDraw;
+  public final FloatingActionButton btnSavePlot;
 
   @NonNull
-  public final LinearLayout spinnerContainer;
+  public final FloatingActionButton btnToggleDraw;
 
   @NonNull
   public final Spinner spinnerPlots;
 
-  @NonNull
-  public final Toolbar topToolbar;
-
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout bottomPanel,
-      @NonNull Button btnClear, @NonNull Button btnSavePlot, @NonNull Button btnToggleDraw,
-      @NonNull LinearLayout spinnerContainer, @NonNull Spinner spinnerPlots,
-      @NonNull Toolbar topToolbar) {
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull LinearLayout actionsColumn, @NonNull FloatingActionButton btnClear,
+      @NonNull FloatingActionButton btnOpenPlotsBottomSheet,
+      @NonNull FloatingActionButton btnSavePlot, @NonNull FloatingActionButton btnToggleDraw,
+      @NonNull Spinner spinnerPlots) {
     this.rootView = rootView;
-    this.bottomPanel = bottomPanel;
+    this.actionsColumn = actionsColumn;
     this.btnClear = btnClear;
+    this.btnOpenPlotsBottomSheet = btnOpenPlotsBottomSheet;
     this.btnSavePlot = btnSavePlot;
     this.btnToggleDraw = btnToggleDraw;
-    this.spinnerContainer = spinnerContainer;
     this.spinnerPlots = spinnerPlots;
-    this.topToolbar = topToolbar;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -84,33 +80,33 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.bottomPanel;
-      LinearLayout bottomPanel = ViewBindings.findChildViewById(rootView, id);
-      if (bottomPanel == null) {
+      id = R.id.actionsColumn;
+      LinearLayout actionsColumn = ViewBindings.findChildViewById(rootView, id);
+      if (actionsColumn == null) {
         break missingId;
       }
 
       id = R.id.btnClear;
-      Button btnClear = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnClear = ViewBindings.findChildViewById(rootView, id);
       if (btnClear == null) {
         break missingId;
       }
 
+      id = R.id.btnOpenPlotsBottomSheet;
+      FloatingActionButton btnOpenPlotsBottomSheet = ViewBindings.findChildViewById(rootView, id);
+      if (btnOpenPlotsBottomSheet == null) {
+        break missingId;
+      }
+
       id = R.id.btnSavePlot;
-      Button btnSavePlot = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnSavePlot = ViewBindings.findChildViewById(rootView, id);
       if (btnSavePlot == null) {
         break missingId;
       }
 
       id = R.id.btnToggleDraw;
-      Button btnToggleDraw = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton btnToggleDraw = ViewBindings.findChildViewById(rootView, id);
       if (btnToggleDraw == null) {
-        break missingId;
-      }
-
-      id = R.id.spinnerContainer;
-      LinearLayout spinnerContainer = ViewBindings.findChildViewById(rootView, id);
-      if (spinnerContainer == null) {
         break missingId;
       }
 
@@ -120,14 +116,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.topToolbar;
-      Toolbar topToolbar = ViewBindings.findChildViewById(rootView, id);
-      if (topToolbar == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((ConstraintLayout) rootView, bottomPanel, btnClear,
-          btnSavePlot, btnToggleDraw, spinnerContainer, spinnerPlots, topToolbar);
+      return new ActivityMainBinding((CoordinatorLayout) rootView, actionsColumn, btnClear,
+          btnOpenPlotsBottomSheet, btnSavePlot, btnToggleDraw, spinnerPlots);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

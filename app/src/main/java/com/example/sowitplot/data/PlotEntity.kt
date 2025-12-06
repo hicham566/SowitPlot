@@ -9,5 +9,7 @@ data class PlotEntity(
     val name: String,
     val polygonEncoded: String,
     val centerLat: Double,
-    val centerLng: Double
+    val centerLng: Double,
+    val areaSqMeters: Double,
+    val thumbnailPath: String?
 )

@@ -1,20 +1,23 @@
 package com.example.sowitplot.data
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PlotDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(plot: PlotEntity)
-
-    @Query("SELECT * FROM plots ORDER BY name")
+    @Query("SELECT * FROM plots ORDER BY id DESC")
     fun getAllPlots(): Flow<List<PlotEntity>>
 
-    @Query("SELECT * FROM plots WHERE id = :id")
-    suspend fun getPlotById(id: Long): PlotEntity?
+    @Insert
+    suspend fun insert(plot: PlotEntity): Long
+
+    @Update
+    suspend fun update(plot: PlotEntity)
+
+    @Delete
+    suspend fun delete(plot: PlotEntity)
+
+    @Query("UPDATE plots SET name = :newName WHERE id = :id")
+    suspend fun rename(id: Long, newName: String)
 }

@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [PlotEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 abstract class PlotDatabase : RoomDatabase() {
@@ -24,7 +24,9 @@ abstract class PlotDatabase : RoomDatabase() {
                     context.applicationContext,
                     PlotDatabase::class.java,
                     "plots_db"
-                ).build()
+                )
+                    .fallbackToDestructiveMigration()
+                    .build()
                 INSTANCE = instance
                 instance
             }

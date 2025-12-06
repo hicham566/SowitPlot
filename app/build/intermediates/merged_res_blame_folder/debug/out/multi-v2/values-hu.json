@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.sowitplot.app-mergeDebugResources-39:/values-hu/values-hu.xml",
+            "outputFile": "com.example.sowitplot.app-mergeDebugResources-40:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "E:\\AndroidStudioCaches\\.gradle\\caches\\8.12\\transforms\\1b488bacb9e89179ef75c0af06d13038\\transformed\\jetified-play-services-base-18.0.1\\res\\values-hu\\values.xml",

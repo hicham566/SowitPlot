@@ -1,107 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <!-- Google Map fills the background -->
+    <!-- Map full screen -->
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <!-- Simple top bar (title) -->
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/topToolbar"
-        android:layout_width="0dp"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/purple_700"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:title="Map"
-        app:titleTextColor="@android:color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <!-- Spinner in a pill at the TOP CENTER (under toolbar) -->
+    <!-- Spinner top-center (you already use spinnerPlots in code) -->
     <LinearLayout
-        android:id="@+id/spinnerContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_spinner"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bg_spinner_card"
+        android:elevation="4dp"
         android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:elevation="8dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/topToolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:paddingVertical="8dp">
 
         <Spinner
             android:id="@+id/spinnerPlots"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:spinnerMode="dropdown"
-            tools:listitem="@android:layout/simple_spinner_dropdown_item" />
+            android:spinnerMode="dropdown" />
     </LinearLayout>
 
-    <!-- Bottom action panel: DRAW / SAVE / CLEAR like your screenshot -->
-
+    <!-- ✅ Vertical action buttons on the right -->
     <LinearLayout
-        android:id="@+id/bottomPanel"
-        android:layout_width="0dp"
+        android:id="@+id/actionsColumn"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:padding="12dp"
-        android:background="@drawable/bg_bottom_panel"
-        android:elevation="12dp"
-        android:layout_margin="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        android:gravity="center">
 
-        <Button
+        <!-- Draw (toggle) -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnToggleDraw"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/stop_drawing"
-            android:textAllCaps="false"
-            android:background="@drawable/bg_small_button"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="8dp" />
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/icon_draw_green"
+            app:tint="@android:color/white"
+            app:backgroundTint="#B9AAAA"
+            android:contentDescription="@string/toggle_drawing" />
 
-        <Button
+        <!-- Save -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnSavePlot"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/save_plot"
-            android:textAllCaps="false"
-            android:background="@drawable/bg_small_button"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="8dp" />
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/icon_save"
+            app:tint="@android:color/white"
+            app:backgroundTint="#B9AAAA"
+            android:contentDescription="@string/save_plot" />
 
-        <Button
+        <!-- Clear -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnClear"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/clear_plot"
-            android:textAllCaps="false"
-            android:background="@drawable/bg_small_button_red"
-            android:textColor="@android:color/white" />
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/icon_delete"
+            app:tint="@android:color/white"
+            app:backgroundTint="#B9AAAA"
+            android:contentDescription="@string/clear_plot" />
+
+        <!-- 🟢 New FAB: open saved plots bottom sheet -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnOpenPlotsBottomSheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:srcCompat="@drawable/icon_list"
+        app:tint="@android:color/white"
+        app:backgroundTint="#B9AAAA"
+        android:contentDescription="@string/open_saved_plots" />
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

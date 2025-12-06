@@ -31,12 +31,12 @@ public final class PlotDatabase_Impl extends PlotDatabase {
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS `plots` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `polygonEncoded` TEXT NOT NULL, `centerLat` REAL NOT NULL, `centerLng` REAL NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `plots` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `polygonEncoded` TEXT NOT NULL, `centerLat` REAL NOT NULL, `centerLng` REAL NOT NULL, `areaSqMeters` REAL NOT NULL, `thumbnailPath` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c06b4871dc745c81e35730eed8745b10')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '01e6296b429c4da63d80901dd774bef3')");
       }
 
       @Override
@@ -85,12 +85,14 @@ public final class PlotDatabase_Impl extends PlotDatabase {
       @NonNull
       public RoomOpenHelper.ValidationResult onValidateSchema(
           @NonNull final SupportSQLiteDatabase db) {
-        final HashMap<String, TableInfo.Column> _columnsPlots = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsPlots = new HashMap<String, TableInfo.Column>(7);
         _columnsPlots.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlots.put("name", new TableInfo.Column("name", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlots.put("polygonEncoded", new TableInfo.Column("polygonEncoded", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlots.put("centerLat", new TableInfo.Column("centerLat", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsPlots.put("centerLng", new TableInfo.Column("centerLng", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPlots.put("areaSqMeters", new TableInfo.Column("areaSqMeters", "REAL", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsPlots.put("thumbnailPath", new TableInfo.Column("thumbnailPath", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         final HashSet<TableInfo.ForeignKey> _foreignKeysPlots = new HashSet<TableInfo.ForeignKey>(0);
         final HashSet<TableInfo.Index> _indicesPlots = new HashSet<TableInfo.Index>(0);
         final TableInfo _infoPlots = new TableInfo("plots", _columnsPlots, _foreignKeysPlots, _indicesPlots);
@@ -102,7 +104,7 @@ public final class PlotDatabase_Impl extends PlotDatabase {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "c06b4871dc745c81e35730eed8745b10", "5a134186f12644aacec3c5ae858e17e1");
+    }, "01e6296b429c4da63d80901dd774bef3", "c5fc25fa2124171045e9fad8caa6932a");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;

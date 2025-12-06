@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- size of the point -->
+    <size
+        android:width="18dp"
+        android:height="18dp" />
+
+    <!-- green fill (change color if you want) -->
+    <solid android:color="#4CAF50" />
+
+    <!-- white border around the point -->
+    <stroke
+        android:width="2dp"
+        android:color="#FFFFFFFF" />
+</shape>

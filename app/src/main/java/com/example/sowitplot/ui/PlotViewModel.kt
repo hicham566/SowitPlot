@@ -12,15 +12,37 @@ class PlotViewModel(private val dao: PlotDao) : ViewModel() {
 
     val plots = dao.getAllPlots().asLiveData()
 
-    fun savePlot(name: String, encoded: String, centerLat: Double, centerLng: Double) {
+    fun savePlot(
+        name: String,
+        encoded: String,
+        centerLat: Double,
+        centerLng: Double,
+        areaSqMeters: Double,
+        thumbnailPath: String?
+    ) {
         viewModelScope.launch {
-            val entity = PlotEntity(
-                name = name,
-                polygonEncoded = encoded,
-                centerLat = centerLat,
-                centerLng = centerLng
+            dao.insert(
+                PlotEntity(
+                    name = name,
+                    polygonEncoded = encoded,
+                    centerLat = centerLat,
+                    centerLng = centerLng,
+                    areaSqMeters = areaSqMeters,
+                    thumbnailPath = thumbnailPath
+                )
             )
-            dao.insert(entity)
+        }
+    }
+
+    fun deletePlot(plot: PlotEntity) {
+        viewModelScope.launch {
+            dao.delete(plot)
+        }
+    }
+
+    fun renamePlot(plot: PlotEntity, newName: String) {
+        viewModelScope.launch {
+            dao.update(plot.copy(name = newName))
         }
     }
 }

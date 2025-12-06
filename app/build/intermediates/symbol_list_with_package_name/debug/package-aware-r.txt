@@ -3017,12 +3017,15 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable amu_bubble_mask
+drawable amu_bubble_shadow
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_bottom_panel
 drawable bg_small_button
 drawable bg_small_button_red
 drawable bg_spinner
+drawable bg_spinner_card
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3075,7 +3078,15 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_point_circle
 drawable ic_search_black_24
+drawable icon_delete
+drawable icon_draw_green
+drawable icon_draw_off
+drawable icon_draw_red
+drawable icon_edit
+drawable icon_list
+drawable icon_save
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3220,6 +3231,7 @@ id action_mode_bar_stub
 id action_mode_close_button
 id action_text
 id actions
+id actionsColumn
 id activity_chooser_view_content
 id add
 id adjust_height
@@ -3229,6 +3241,7 @@ id aligned
 id all
 id allStates
 id always
+id amu_text
 id animateToEnd
 id animateToStart
 id antiClockwise
@@ -3247,12 +3260,14 @@ id beginning
 id bestChoice
 id blocking
 id bottom
-id bottomPanel
 id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
 id btnClear
+id btnDelete
+id btnEdit
+id btnOpenPlotsBottomSheet
 id btnSavePlot
 id btnToggleDraw
 id buttonPanel
@@ -3380,6 +3395,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageThumbnail
 id immediateStop
 id included
 id indeterminate
@@ -3520,6 +3536,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recyclerPlots
 id report_drawn
 id reverseSawtooth
 id right
@@ -3569,7 +3586,6 @@ id snapMargins
 id south
 id spacer
 id special_effects_controller_view_tag
-id spinnerContainer
 id spinnerPlots
 id spline
 id split_action_bar
@@ -3609,7 +3625,9 @@ id tag_window_insets_animation_callback
 id terrain
 id text
 id text2
+id textArea
 id textEnd
+id textName
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -3630,7 +3648,6 @@ id title_template
 id toggle
 id top
 id topPanel
-id topToolbar
 id touch_outside
 id transitionToEnd
 id transitionToStart
@@ -3654,8 +3671,10 @@ id view_tree_saved_state_registry_owner
 id view_tree_view_model_store_owner
 id visible
 id visible_removing_fragment_view_tag
+id webview
 id west
 id wide
+id window
 id withText
 id with_icon
 id withinBounds
@@ -3780,6 +3799,10 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout amu_info_window
+layout amu_text_bubble
+layout amu_webview
+layout bottom_sheet_plots
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3798,6 +3821,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_plot
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4040,6 +4064,7 @@ string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
 string ok
+string open_saved_plots
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4056,6 +4081,7 @@ string side_sheet_behavior
 string start_drawing
 string status_bar_notification_info_overflow
 string stop_drawing
+string toggle_drawing
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -5173,6 +5199,9 @@ style Widget_MaterialComponents_Toolbar_PrimarySurface
 style Widget_MaterialComponents_Toolbar_Surface
 style Widget_MaterialComponents_Tooltip
 style Widget_Support_CoordinatorLayout
+style amu_Bubble_TextAppearance_Dark
+style amu_Bubble_TextAppearance_Light
+style amu_ClusterIcon_TextAppearance
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

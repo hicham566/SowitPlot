@@ -15,10 +15,12 @@
     <string name="enter_plot_name">Enter plot name</string>
     <string name="google_maps_key" translatable="false">AIzaSyBEfVLFOnUNSSSfVjeJ99Hy7f06iszMpaw</string>
     <string name="ok">OK</string>
+    <string name="open_saved_plots">details</string>
     <string name="save_plot">Save plot</string>
     <string name="select_plot">Select saved plot</string>
     <string name="start_drawing">Start drawing</string>
     <string name="stop_drawing">Stop drawing</string>
+    <string name="toggle_drawing">drawing</string>
     <style name="Theme.SowitPlotApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
