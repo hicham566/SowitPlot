@@ -2,5 +2,9 @@
     {
         "merged": "com.example.sowitplot.app-mergeDebugResources-40:/layout/activity_main.xml",
         "source": "com.example.sowitplot.app-main-43:/layout/activity_main.xml"
+    },
+    {
+        "merged": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-mergeDebugResources-40:\\layout\\activity_main.xml",
+        "source": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-main-43:\\layout\\activity_main.xml"
     }
 ]

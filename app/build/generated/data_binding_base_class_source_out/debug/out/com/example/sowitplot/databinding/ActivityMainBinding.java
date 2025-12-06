@@ -9,7 +9,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.sowitplot.R;
@@ -19,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final LinearLayout bottomPanel;
@@ -34,22 +35,31 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnToggleDraw;
 
   @NonNull
+  public final LinearLayout spinnerContainer;
+
+  @NonNull
   public final Spinner spinnerPlots;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull LinearLayout bottomPanel, @NonNull Button btnClear, @NonNull Button btnSavePlot,
-      @NonNull Button btnToggleDraw, @NonNull Spinner spinnerPlots) {
+  @NonNull
+  public final Toolbar topToolbar;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout bottomPanel,
+      @NonNull Button btnClear, @NonNull Button btnSavePlot, @NonNull Button btnToggleDraw,
+      @NonNull LinearLayout spinnerContainer, @NonNull Spinner spinnerPlots,
+      @NonNull Toolbar topToolbar) {
     this.rootView = rootView;
     this.bottomPanel = bottomPanel;
     this.btnClear = btnClear;
     this.btnSavePlot = btnSavePlot;
     this.btnToggleDraw = btnToggleDraw;
+    this.spinnerContainer = spinnerContainer;
     this.spinnerPlots = spinnerPlots;
+    this.topToolbar = topToolbar;
   }
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -98,14 +108,26 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.spinnerContainer;
+      LinearLayout spinnerContainer = ViewBindings.findChildViewById(rootView, id);
+      if (spinnerContainer == null) {
+        break missingId;
+      }
+
       id = R.id.spinnerPlots;
       Spinner spinnerPlots = ViewBindings.findChildViewById(rootView, id);
       if (spinnerPlots == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((CoordinatorLayout) rootView, bottomPanel, btnClear,
-          btnSavePlot, btnToggleDraw, spinnerPlots);
+      id = R.id.topToolbar;
+      Toolbar topToolbar = ViewBindings.findChildViewById(rootView, id);
+      if (topToolbar == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, bottomPanel, btnClear,
+          btnSavePlot, btnToggleDraw, spinnerContainer, spinnerPlots, topToolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

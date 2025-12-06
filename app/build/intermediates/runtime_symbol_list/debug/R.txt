@@ -3018,6 +3018,10 @@ int drawable abc_textfield_search_material 0x7f070075
 int drawable abc_vector_test 0x7f070076
 int drawable avd_hide_password 0x7f070077
 int drawable avd_show_password 0x7f070078
+int drawable bg_bottom_panel 0x7f0700f9
+int drawable bg_small_button 0x7f0700fa
+int drawable bg_small_button_red 0x7f0700fb
+int drawable bg_spinner 0x7f0700fc
 int drawable btn_checkbox_checked_mtrl 0x7f070079
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f07007a
 int drawable btn_checkbox_unchecked_mtrl 0x7f07007b
@@ -3564,6 +3568,7 @@ int id snapMargins 0x7f08019e
 int id south 0x7f08019f
 int id spacer 0x7f0801a0
 int id special_effects_controller_view_tag 0x7f0801a1
+int id spinnerContainer 0x7f0801ff
 int id spinnerPlots 0x7f0801a2
 int id spline 0x7f0801a3
 int id split_action_bar 0x7f0801a4
@@ -3624,6 +3629,7 @@ int id title_template 0x7f0801da
 int id toggle 0x7f0801db
 int id top 0x7f0801dc
 int id topPanel 0x7f0801dd
+int id topToolbar 0x7f080200
 int id touch_outside 0x7f0801de
 int id transitionToEnd 0x7f0801df
 int id transitionToStart 0x7f0801e0
