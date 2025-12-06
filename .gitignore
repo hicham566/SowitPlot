@@ -1,0 +1,16 @@
+# Gradle & build
+.gradle/
+build/
+**/build/
+
+# IDE
+.idea/
+*.iml
+
+# Local config & secrets
+local.properties
+api_keys.properties
+
+# Keystores (signing)
+*.jks
+*.keystore
