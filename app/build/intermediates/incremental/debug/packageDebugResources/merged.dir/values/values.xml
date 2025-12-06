@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent">#00C853</color>
+    <color name="black">#000000</color>
+    <color name="primary">#4A148C</color>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="white">#FFFFFF</color>
+    <string name="app_name">Sowit Plot App</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear_plot">Clear</string>
+    <string name="enter_plot_name">Enter plot name</string>
+    <string name="google_maps_key" translatable="false">AIzaSyBEfVLFOnUNSSSfVjeJ99Hy7f06iszMpaw</string>
+    <string name="ok">OK</string>
+    <string name="save_plot">Save plot</string>
+    <string name="select_plot">Select saved plot</string>
+    <string name="start_drawing">Start drawing</string>
+    <string name="stop_drawing">Stop drawing</string>
+    <style name="Theme.SowitPlotApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+</resources>
