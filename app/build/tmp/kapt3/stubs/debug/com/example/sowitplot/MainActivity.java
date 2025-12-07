@@ -60,9 +60,6 @@ public final class MainActivity extends androidx.appcompat.app.AppCompatActivity
     private final void saveCurrentPlot() {
     }
     
-    /**
-     * Take a snapshot of the current map and save it to internal storage
-     */
     private final void captureSnapshot(kotlin.jvm.functions.Function1<? super java.lang.String, kotlin.Unit> onSaved) {
     }
     

@@ -42,7 +42,7 @@ import com.google.maps.android.SphericalUtil
 import java.io.File
 import java.io.FileOutputStream
 import java.util.Locale
-
+import androidx.lifecycle.Observer
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var binding: ActivityMainBinding
@@ -296,21 +296,35 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val recycler = view.findViewById<RecyclerView>(R.id.recyclerPlots)
         recycler.layoutManager = LinearLayoutManager(this)
+
         val adapter = PlotsAdapter(
             onSelect = { plot ->
                 loadPlotOnMap(plot)
                 dialog.dismiss()
             },
-            onEdit = { plot -> showRenameDialog(plot) },
-            onDelete = { plot -> confirmDeletePlot(plot) }
+            onEdit = { plot ->
+                showRenameDialog(plot)
+            },
+            onDelete = { plot ->
+                confirmDeletePlot(plot)
+            }
         )
         recycler.adapter = adapter
 
-        val plots = viewModel.plots.value.orEmpty()
-        adapter.submitList(plots)
+
+        val observer = Observer<List<PlotEntity>> { plots ->
+            adapter.submitList(plots)
+        }
+        viewModel.plots.observe(this, observer)
+
+
+        dialog.setOnDismissListener {
+            viewModel.plots.removeObserver(observer)
+        }
 
         dialog.show()
     }
+
 
     private fun showRenameDialog(plot: PlotEntity) {
         val input = EditText(this)
