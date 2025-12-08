@@ -25,6 +25,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         // create a string resource from the properties file
         resValue "string", "google_maps_key", apiKeysProps["GOOGLE_MAPS_KEY"]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildFeatures {
@@ -68,4 +69,16 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
     implementation "com.google.maps.android:android-maps-utils:3.8.2"
+
+
+// --- unit tests (local JVM) ---
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "androidx.arch.core:core-testing:2.2.0"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3"
+
+// --- android instrumented tests (UI / Espresso) ---
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+    implementation "org.jetbrains.kotlin:kotlin-test:1.9.24"
+
 }

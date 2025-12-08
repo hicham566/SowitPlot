@@ -79,7 +79,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun setupUi() {
-        // ---------- spinner ----------
         spinnerItems.clear()
         spinnerItems.add(SpinnerItem(PLACEHOLDER_ID, "Select plot"))
 
@@ -133,6 +132,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     }
+// https://thunderous-medovik-b82e71.netlify.app/camera-animated-to-plot-location-selected.mp4
+// https://thunderous-medovik-b82e71.netlify.app/Draw-From-Google-Map-by-tapping.mp4
+// https://thunderous-medovik-b82e71.netlify.app/Full-Test.mp4
+// https://thunderous-medovik-b82e71.netlify.app/Save-the-drawn-plot-to-local-Room-DB-with-custom-name-and-rename.mp4
+// https://thunderous-medovik-b82e71.netlify.app/View-all-saved-plots-in-Spinner-dropdown.mp4
 
 
     private fun observePlots() {
