@@ -1,18 +1,14 @@
 [
     {
-        "merged": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-mergeDebugResources-41:\\layout\\item_plot.xml",
-        "source": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-main-44:\\layout\\item_plot.xml"
+        "merged": "com.example.sowitplot.app-mergeDebugResources-41:/layout/bottom_sheet_plots.xml",
+        "source": "com.example.sowitplot.app-main-44:/layout/bottom_sheet_plots.xml"
     },
     {
         "merged": "com.example.sowitplot.app-mergeDebugResources-41:/layout/activity_main.xml",
         "source": "com.example.sowitplot.app-main-44:/layout/activity_main.xml"
     },
     {
-        "merged": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-mergeDebugResources-41:\\layout\\bottom_sheet_plots.xml",
-        "source": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-main-44:\\layout\\bottom_sheet_plots.xml"
-    },
-    {
-        "merged": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-mergeDebugResources-41:\\layout\\activity_main.xml",
-        "source": "E:\\AndroidStudioCaches\\.gradle\\daemon\\8.12\\com.example.sowitplot.app-main-44:\\layout\\activity_main.xml"
+        "merged": "com.example.sowitplot.app-mergeDebugResources-41:/layout/item_plot.xml",
+        "source": "com.example.sowitplot.app-main-44:/layout/item_plot.xml"
     }
 ]

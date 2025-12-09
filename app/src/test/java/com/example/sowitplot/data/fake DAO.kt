@@ -17,7 +17,6 @@ import org.junit.Rule
 import org.junit.Test
 import kotlin.test.assertEquals
 
-// ---------- Fake in-memory DAO used only for tests ----------
 class FakePlotDao : PlotDao {
 
     private val items = mutableListOf<PlotEntity>()
@@ -56,7 +55,6 @@ class FakePlotDao : PlotDao {
     }
 }
 
-// ---------- ViewModel unit test ----------
 @OptIn(ExperimentalCoroutinesApi::class)
 class PlotViewModelTest {
 
