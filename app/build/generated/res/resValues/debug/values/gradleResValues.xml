@@ -4,6 +4,6 @@
     <!-- Automatically generated file. DO NOT MODIFY -->
 
     <!-- Value from default config. -->
-    <string name="google_maps_key" translatable="false">AIzaSyBEfVLFOnUNSSSfVjeJ99Hy7f06iszMpaw</string>
+    <string name="google_maps_key" translatable="false">@string/google_maps_key</string>
 
 </resources>
